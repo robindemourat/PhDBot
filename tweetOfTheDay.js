@@ -17,8 +17,18 @@ const tweet = function() {
       const activeDate = new Date();
       const dayStamp = activeDate.getFullYear() + '-' + activeDate.getMonth() + '-' + activeDate.getDate();
       const tweetOfTheDay = summary.find(tweet => tweet.id === dayStamp);
+      let tweetContent = tweetOfTheDay.plainSource + config.tweetSuffix;
+      const tags = tweetOfTheDay.tags.slice();
+      while(tags.length && (tweetContent + ' #' + tags[0]).length < 140) {
+        tweetContent += ' #' + tags[0];
+        tags.shift();
+      }
       if (tweetOfTheDay) {
-        publishImage(path.resolve(__dirname + '/images/' + tweetOfTheDay.id  + '.jpg'), tweetOfTheDay.plainCitation, tweetOfTheDay.plainSource + config.tweetSuffix, (err) => {
+        publishImage(
+          path.resolve(__dirname + '/images/' + tweetOfTheDay.id  + '.jpg'), 
+          tweetOfTheDay.plainCitation, 
+          tweetContent, //  + tweetOfTheDay.tags.join(' #'), 
+          (err) => {
           if (err) {
             console.log('error while publishing : ', err);
 

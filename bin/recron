@@ -1,5 +1,5 @@
 #!/usr/bin/env node
 
-const t = require('./tweetOfTheDay');
+const t = require('../tweetOfTheDay');
 
 t();
