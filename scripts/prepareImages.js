@@ -2,6 +2,7 @@ const path = require('path');
 const fs = require('fs');
 var h2p = require('html2plaintext');
 const async = require('async');
+const arrayShuffle = require('array-shuffle');
 
 const parseCitations = require('./parseCitations');
 const toImage = require('./htmlToImage');
@@ -21,7 +22,7 @@ module.exports = function prepareImages(imagesDir, dataDir, callback) {
     path.resolve(dataDir + '/references.csv'), 
     (err, quotes) => {
       let cont = 0;
-      async.mapSeries(quotes, (quote, quoteCb) => {
+      async.mapSeries(arrayShuffle(quotes), (quote, quoteCb) => {
         cont++;
         const citation = formatCitation(quote.bibRef.bibtex, quote.localisateur);
         const displayDate = activeDate.getFullYear() + '-' + activeDate.getMonth() + '-' + activeDate.getDate();
