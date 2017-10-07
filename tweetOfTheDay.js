@@ -1,8 +1,9 @@
 const fs = require('fs');
+const path = require('path');
 const publishImage = require('./scripts/publishImage');
 const config = require('./config.json');
 
-module.exports = function() {
+const tweet = function() {
 
   console.log('bip bip bip. Waking up to publish stuff');
   /*
@@ -32,3 +33,5 @@ module.exports = function() {
       console.log('json invalid', e);
     }
 }
+
+module.exports = tweet;

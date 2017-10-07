@@ -6,7 +6,8 @@
   "scripts": {
     "test": "echo 'No lol'",
     "build": "node build_images",
-    "start": "node main"
+    "start": "node main",
+    "tweet": "node tweet"
   },
   "repository": {
     "type": "git",
