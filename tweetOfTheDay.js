@@ -1,10 +1,8 @@
-const CronJob = require('cron').CronJob;
 const fs = require('fs');
 const publishImage = require('./scripts/publishImage');
 const config = require('./config.json');
 
-console.log('starting cron job with freq', config.cronFreq);
-const job = new CronJob(config.cronFreq, function() {
+module.exports = function() {
 
   console.log('bip bip bip. Waking up to publish stuff');
   /*
@@ -33,13 +31,4 @@ const job = new CronJob(config.cronFreq, function() {
     } catch(e) {
       console.log('json invalid', e);
     }
-      
-  }, function () {
-    /* This function is executed when the job stops */
-    console.log('job is stopping');
-  },
-  true, /* Start the job right now */
-  'Europe/Paris' /* Time zone of this job. */
-);
-
-job.start();
+}

@@ -1,4 +1,4 @@
 {
   "tweetSuffix": " #PhDBot #reading #notes #publishing",
-  "cronFreq": "00 45 19 * * 1-6"
+  "cronFreq": "00 15 20 * * 1-6"
 }
