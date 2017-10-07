@@ -17,7 +17,7 @@ module.exports = function() {
       const dayStamp = activeDate.getFullYear() + '-' + activeDate.getMonth() + '-' + activeDate.getDate();
       const tweetOfTheDay = summary.find(tweet => tweet.id === dayStamp);
       if (tweetOfTheDay) {
-        publishImage(tweetOfTheDay.path, tweetOfTheDay.plainCitation, tweetOfTheDay.plainSource + config.tweetSuffix, (err) => {
+        publishImage(path.resolve(__dirname + '/images/' + tweetOfTheDay.id  + '.jpg'), tweetOfTheDay.plainCitation, tweetOfTheDay.plainSource + config.tweetSuffix, (err) => {
           if (err) {
             console.log('error while publishing : ', err);
 

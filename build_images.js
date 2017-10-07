@@ -27,12 +27,3 @@ prepareImages(
     console.log(err);
   }
 );
-
-
-// console.log(items);
-// async.mapSeries(items, (item, itemCb) => {
-//   const text = item.plainSource + ' #PhDBot #lecture #publishing #formats #DH';
-//   publishImage(item.path, item.plainCitation, text, itemCb);
-// }, err => {
-//   console.log('all done', err);
-// })

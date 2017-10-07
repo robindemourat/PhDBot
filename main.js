@@ -1,4 +1,5 @@
 const fs = require('fs');
+const path = require('path');
 const express = require('express')
 const app = express()
 const config = require('./config.json');
@@ -11,7 +12,7 @@ app.get('/', function (req, res) {
       const dayStamp = activeDate.getFullYear() + '-' + activeDate.getMonth() + '-' + activeDate.getDate();
       const tweetOfTheDay = summary.find(tweet => tweet.id === dayStamp);
       if (tweetOfTheDay) {
-        const image = fs.readFileSync(tweetOfTheDay.path, 'base64');
+        const image = fs.readFileSync(path.resolve(__dirname + '/images/' + tweetOfTheDay.id  + '.jpg'), 'base64');
         const date = config.cronFreq.split(' ').slice(0, 3).reverse().join(':')
         const base = 
         res.send(`<html><body>
