@@ -1,0 +1,10 @@
+{
+  "name": "PhdBot",
+  "description": "Publishes citations as images on twitter",
+
+  "buildpacks": [
+    {
+      "url": "https://github.com/heroku/heroku-buildpack-nodejs#v63"
+    }
+  ]
+}

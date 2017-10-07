@@ -1,0 +1,41 @@
+{
+  "name": "phdbot",
+  "version": "1.0.0",
+  "description": "PhD Bot",
+  "main": "cron.js",
+  "scripts": {
+    "test": "echo 'No lol'",
+    "build": "node build_images",
+    "start": "node cron"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/robindemourat/PhDBot.git"
+  },
+  "keywords": [
+    "bot",
+    "phd",
+    "twitter",
+    "text-to-image"
+  ],
+  "author": "Robin de Mourat",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/robindemourat/PhDBot/issues"
+  },
+  "homepage": "https://github.com/robindemourat/PhDBot#readme",
+  "dependencies": {
+    "async": "^2.5.0",
+    "citation-js": "^0.3.4",
+    "cron": "^1.3.0",
+    "d3-dsv": "^1.0.7",
+    "hawk": "^6.0.2",
+    "html-convert": "^2.1.7",
+    "html2plaintext": "^1.1.1",
+    "markdown": "^0.5.0",
+    "post-image-to-twitter": "^1.0.0",
+    "text-to-image": "^1.1.0",
+    "twit": "^2.2.9",
+    "webshot": "^0.18.0"
+  }
+}
