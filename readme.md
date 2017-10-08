@@ -68,5 +68,5 @@ chmod u+rw heroku.sh
 
 At the end of its execution the script opens the page of the `heroku scheduler` add-on. You will have to :
 * click on "add a new job"
-* in the command input: `node bin/recron`
+* in the command input: `node tweet.js`
 * set the UTC date corresponding to the moment in the day when to publish new citations
