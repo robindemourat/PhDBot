@@ -40,6 +40,7 @@
     "progress": "^2.0.0",
     "text-to-image": "^1.1.0",
     "twit": "^2.2.9",
+    "typographic-base": "^1.0.4",
     "webshot": "^0.18.0"
   }
 }
